@@ -14,6 +14,14 @@ def randomArray():
         arr[i] = r
     return arr
 
+def fillArray(pNumbers):
+    tempList = pNumbers.split (",")
+    tempArr = np.empty(len(tempList), dtype=int)
+    for i in range(0, len(tempList)):
+        tempArr[i] = tempList[i]
+    return tempArr
+
+
 
 # shuffles and returns an array
 def shuffleArray(pArray):
@@ -33,20 +41,21 @@ def checkArray(pArray):
 
     return True
 
+# calculate amount of possible combinations
+def factorial(n):
+    if n == 0:
+        return 1
+    return n * factorial(n - 1)
+
 
 # bogo sort
 def bogoSort(pArray):
     print("Start" + str(pArray))
+    print("Possible combinations: " + str(factorial(len(pArray))))
     while not checkArray(pArray):
         shuffleArray(pArray)
     return pArray
 
-def fillArray(pNumbers):
-    tempList = pNumbers.split (",")
-    tempArr = np.empty(len(tempList), dtype=int)
-    for i in range(0, len(tempList)):
-        tempArr[i] = tempList[i]
-    return tempArr
 
 
 
@@ -62,3 +71,4 @@ result = str(bogoSort(arr))
 
 
 print("End result: " + result)
+
