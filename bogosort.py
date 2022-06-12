@@ -50,13 +50,14 @@ def fillArray(pNumbers):
 
 
 
-mode = input("[r]andom or [c]ustom array? ")
-if mode == "r" or mode == "random":
-    arr = randomArray();
-elif mode == "c" or mode  == "custom":
+mode = input("[R]andom or [c]ustom array? ")
+mode = mode.lower()
+if mode == "c" or mode  == "custom":
     numbers = str(input("Enter comma separated integers. e.g. 1,2,3,4,5: "))
     arr = fillArray(numbers)
-
+else:
+    arr = randomArray();
+    
 result = str(bogoSort(arr))
 
 
