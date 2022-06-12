@@ -4,10 +4,7 @@ import random
 
 # generates and return a random array
 def randomArray():
-    low = int(input("Lowest possible length "))
-    high = int(input("Highest possible length "))
-
-    length = random.randint(low, high + 1)
+    length = random.randint(1, 25)
     arr = np.empty(length, dtype=int)
     for i in range(0, length):
         r = random.randint(-100, 100)
